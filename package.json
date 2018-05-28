@@ -1,7 +1,7 @@
 {
   "name": "@banterability/armillary",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Perform useful functions on a group of locations",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -15,5 +15,16 @@
   },
   "dependencies": {
     "geolib": "^2.0.24"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banterability/armillary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/banterability/armillary/issues"
+  },
+  "homepage": "https://github.com/banterability/armillary#readme"
 }
