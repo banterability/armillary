@@ -14,23 +14,12 @@ class Armillary {
     const nearest = geolib.findNearest(point, this.items, 0, limit);
 
     if (Array.isArray(nearest)) {
-      return nearest.map(({key, distance}) => {
-        const item = this.items[key];
-
-        return {
-          ...item,
-          ...getDistance(distance)
-        };
-      });
+      return nearest.map(({key, distance}) =>
+        this._decorateItemWithDistance(key, distance)
+      );
     }
 
-    const {key, distance} = nearest;
-    const item = this.items[key];
-
-    return {
-      ...item,
-      ...getDistance(distance)
-    };
+    return this._decorateItemWithDistance(nearest.key, nearest.distance);
   }
 
   get length() {
@@ -51,6 +40,14 @@ class Armillary {
         ...getDistance(meters)
       };
     });
+  }
+
+  _decorateItemWithDistance(index, distance) {
+    const item = this.items[index];
+    return {
+      ...item,
+      ...getDistance(distance)
+    };
   }
 }
 
