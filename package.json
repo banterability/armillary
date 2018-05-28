@@ -1,0 +1,19 @@
+{
+  "name": "@banterability/armillary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prettier": "prettier --write '**/*.js'"
+  },
+  "author": "Jeff Long <hello@banterability.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.0.1",
+    "prettier": "^1.13.0"
+  },
+  "dependencies": {
+    "geolib": "^2.0.24"
+  }
+}

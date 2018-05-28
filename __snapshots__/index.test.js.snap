@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Armillary bounds returns a box containing all locations 1`] = `
+Object {
+  "maxLat": 41.97766526,
+  "maxLng": -87.624342,
+  "minLat": 41.722377,
+  "minLng": -87.90422307,
+}
+`;
+
+exports[`Armillary withDistance returns all locations with distance from a given point 1`] = `
+Array [
+  Object {
+    "distance": Object {
+      "feet": 1585,
+      "miles": 0.3,
+    },
+    "latitude": 41.885737,
+    "longitude": -87.630886,
+    "name": "Clark/Lake",
+  },
+  Object {
+    "distance": Object {
+      "feet": 82900,
+      "miles": 15.7,
+    },
+    "latitude": 41.97766526,
+    "longitude": -87.90422307,
+    "name": "O'Hare",
+  },
+  Object {
+    "distance": Object {
+      "feet": 58192,
+      "miles": 11,
+    },
+    "latitude": 41.722377,
+    "longitude": -87.624342,
+    "name": "95th/Dan Ryan",
+  },
+]
+`;
