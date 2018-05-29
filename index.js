@@ -1,5 +1,5 @@
 const geolib = require("geolib");
-const decorateItemWithDistance = require("./lib/decorator");
+const {decorateItemWithDistance} = require("./lib");
 
 class Armillary {
   constructor(items = []) {
