@@ -1,4 +1,4 @@
-const Armillary = require("./index");
+const Armillary = require("../index");
 
 describe("Armillary", () => {
   let locations;
