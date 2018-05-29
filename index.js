@@ -1,5 +1,5 @@
 const geolib = require("geolib");
-const {getDistance} = require("./lib/units");
+const decorateItemWithDistance = require("./lib/decorator");
 
 class Armillary {
   constructor(items = []) {
@@ -15,11 +15,11 @@ class Armillary {
 
     if (Array.isArray(nearest)) {
       return nearest.map(({key, distance}) =>
-        this._decorateItemWithDistance(key, distance)
+        decorateItemWithDistance(this.items[key], distance)
       );
     }
 
-    return this._decorateItemWithDistance(nearest.key, nearest.distance);
+    return decorateItemWithDistance(this.items[nearest.key], nearest.distance);
   }
 
   get length() {
@@ -35,19 +35,8 @@ class Armillary {
         {latitude: item.latitude, longitude: item.longitude}
       );
 
-      return {
-        ...item,
-        ...getDistance(meters)
-      };
+      return decorateItemWithDistance(item, meters);
     });
-  }
-
-  _decorateItemWithDistance(index, distance) {
-    const item = this.items[index];
-    return {
-      ...item,
-      ...getDistance(distance)
-    };
   }
 }
 
